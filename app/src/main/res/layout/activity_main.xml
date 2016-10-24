@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.ory.beerz.MainActivity">
+
+
+    <ListView
+        android:id="@+id/Listview_items_beer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:text="+"
+        android:textSize="40sp"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/ripple"
+        android:id="@+id/fabbutton"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:elevation="3dp"
+        android:paddingBottom="16dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|bottom" />
+</FrameLayout>
