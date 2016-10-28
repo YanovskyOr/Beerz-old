@@ -1,9 +1,11 @@
 package com.ory.beerz;
 
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Outline;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,11 +26,12 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     final Context c = this;
+    FloatingActionButton fab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         String[] beerNames= {
@@ -69,42 +72,17 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.Listview_items_beer);
         listView.setAdapter(beerListAdapter);
 
-        Button fab = (Button) findViewById(R.id.fabbutton);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                LayoutInflater layoutInflaterAndroid = LayoutInflater.from(c);
-                View mView = layoutInflaterAndroid.inflate(R.layout.activity_add_beer, null);
-                AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(c);
-                alertDialogBuilderUserInput.setView(mView);
-
-                final EditText beerName = (EditText) mView.findViewById(R.id.beerName);
-
-                alertDialogBuilderUserInput
-                        .setCancelable(false)
-
-                        .setPositiveButton("Save", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
-                                // ToDo get user input here
-                            }
-                        })
-
-                        .setNegativeButton("Cancel",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialogBox, int id) {
-                                        dialogBox.cancel();
-                                    }
-                                });
-
-                AlertDialog alertDialogAndroid = alertDialogBuilderUserInput.create();
-                alertDialogAndroid.show();
+                startActivity(new Intent(MainActivity.this, addBeerActivity.class));
+                //final EditText beerName = (EditText) mView.findViewById(R.id.beerName);
 
             }
         });
-
-
 
     }
 }

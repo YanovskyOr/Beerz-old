@@ -6,6 +6,9 @@ import android.view.Menu;
 
 public class addBeerActivity extends AppCompatActivity {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
