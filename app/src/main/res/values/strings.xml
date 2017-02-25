@@ -3,5 +3,9 @@
     <string name="static_shortcut_disabled_message">shortcut disabled</string>
     <string name="static_shortcut_long_label">Add beer</string>
     <string name="static_shortcut_short_label">Add beer</string>
+    <string name="action_addBeerCancel">Cancel</string>
+    <string name="action_addBeerSave">Save</string>
+    <string name="action_settings">Settings</string>
+
 
 </resources>
